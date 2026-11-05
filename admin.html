@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/Style.css">
+
+    <title>Administración - Dios sigue restaurando vidas</title>
+</head>
+
+<body class="admin">
+
+    <main>
+
+        <h1>Panel de administración</h1>
+
+        <p>
+            Desde aquí puedes actualizar el contenido de la página principal.
+        </p>
+
+        <section>
+
+            <h2>Contenido principal</h2>
+
+            <label for="titulo">
+                Título
+            </label>
+
+            <input
+                type="text"
+                id="titulo"
+                placeholder="Escribe el título"
+            >
+
+            <label for="subtitulo">
+                Subtítulo
+            </label>
+
+            <input
+                type="text"
+                id="subtitulo"
+                placeholder="Escribe el subtítulo"
+            >
+
+            <label for="mensaje">
+                Mensaje
+            </label>
+
+            <textarea
+                id="mensaje"
+                placeholder="Escribe el mensaje"
+            ></textarea>
+
+            <button id="guardarBtn">
+                Guardar cambios
+            </button>
+
+            <p id="estado"></p>
+
+        </section>
+
+    </main>
+
+    <script src="JS/admin.js"></script>
+
+</body>
+
+</html>

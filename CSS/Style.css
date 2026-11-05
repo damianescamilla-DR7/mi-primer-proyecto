@@ -1,56 +1,234 @@
+/* ==============================
+   CONFIGURACIÓN GENERAL
+   ============================== */
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+
+/* ==============================
+   PÁGINA PRINCIPAL
+   ============================== */
 
 body {
     font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    color: #222;
+    background: linear-gradient(135deg, #111827, #1e3a8a);
+    color: white;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-body > * {
+main {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 25px;
+    border-radius: 20px;
     text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 1.5rem;
     margin-bottom: 20px;
+    color: #93c5fd;
 }
 
 p {
-    max-width: 600px;
-    margin: 0 auto 25px;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
 a,
 button {
     display: inline-block;
-    padding: 12px 20px;
-    margin: 5px;
-    border-radius: 8px;
+    padding: 12px 25px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 30px;
+    background: #2563eb;
+    color: white;
     text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+a:hover,
+button:hover {
+    background: #60a5fa;
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   MENSAJE
+   ============================== */
+
+.mensaje {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    font-weight: bold;
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==============================
+   PANEL DE ADMINISTRACIÓN
+   ============================== */
+
+body.admin {
+    background: #f2f2f2;
+    color: #222;
+    display: block;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+body.admin main {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+    backdrop-filter: none;
+}
+
+body.admin h1 {
+    text-align: center;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+body.admin main > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+body.admin section {
+    display: flex;
+    flex-direction: column;
+}
+
+body.admin h2 {
+    color: #1e3a8a;
+    margin-bottom: 25px;
+}
+
+body.admin label {
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+body.admin input,
+body.admin textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: white;
+}
+
+body.admin textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+body.admin button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
 }
 
-a {
-    background: #222;
-    color: white;
+body.admin button:hover {
+    background: #1d4ed8;
+    transform: none;
 }
 
-button {
-    border: none;
-    background: #555;
-    color: white;
+body.admin #estado {
+    text-align: center;
+    margin-top: 15px;
+    color: #15803d;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   ADAPTACIÓN PARA CELULAR
+   ============================== */
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    body.admin {
+        padding: 10px;
+    }
+
+    body.admin main {
+        margin: 10px auto;
+        padding: 20px;
+    }
+
+    body.admin h1 {
+        font-size: 2rem;
+    }
 }
